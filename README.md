@@ -213,7 +213,7 @@ WHERE u.id = 1001
 
 ### Optimized Query Execution Plan
 
-![Optimized Query Execution Plan](./analysis/optimized-query-execution-plan.svg)Optimized%20Query%20Explain)
+![Optimized Query Execution Plan](./analysis/optimized-query-execution-plan.svg)
 
 **Characteristics:**
 
@@ -382,8 +382,8 @@ DB_PASSWORD=your_password
 ├── analysis/                         # Query analysis and execution plans
 │   ├── bad_query_execution_plan.csv  # Bad query plan data
 │   ├── optimized query.csv           # Optimized query plan data
-│   ├── Explain Plan for Bad Query    # Visual execution plan (SVG)
-│   └── Optimized Query Explain       # Optimized plan visualization (SVG)
+│   ├── bad-query-execution-plan.svg  # Visual execution plan (SVG)
+│   └── optimized-query-execution-plan.svg # Optimized plan visualization (SVG)
 ├── database/                         # Database schema and migrations
 │   └── database-schema.sql           # Database schema and indexes
 ├── docs/                             # Documentation
