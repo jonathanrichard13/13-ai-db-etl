@@ -1,0 +1,26 @@
+Step,Operation,Object / Condition,Actual Rows,Loops,Notes
+1,Nested Loop Left Join,,1,1,Outer Join
+2,→ Nested Loop Left Join,,1,1,
+3,→ Nested Loop Left Join,,1,1,
+4,→ Index Scan,"users as u using users_pkey
+Index Cond: (id = 1001)",1,1,
+5,→ Index Scan,"auth as a using auth_pkey
+Index Cond: (id = u.auth_id)",1,1,
+6,→ Seq Scan,"user_roles as ur
+Filter: (user_id = 1001)
+Rows Removed: 10002",1,1,Filter applied
+7,→ Seq Scan,"user_divisions as ud
+Filter: (user_id = 1001)
+Rows Removed: 10002",1,1,Filter applied
+8,Aggregate,,1,1,Aggregating user_logs
+9,→ Seq Scan,"user_logs
+Filter: (user_id = u.id)
+Rows Removed: 29921",4,1,Filter applied
+10,Aggregate,,1,1,Aggregating user_roles
+11,→ Seq Scan,"user_roles
+Filter: (user_id = u.id)
+Rows Removed: 10002",1,1,Filter applied again
+12,Aggregate,,1,1,Aggregating user_divisions
+13,→ Seq Scan,"user_divisions
+Filter: (user_id = u.id)
+Rows Removed: 10002",1,1,Filter applied again

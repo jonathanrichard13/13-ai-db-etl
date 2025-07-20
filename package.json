@@ -1,0 +1,34 @@
+{
+  "name": "database-optimization-project",
+  "version": "1.0.0",
+  "description": "Database optimization project with ETL data cleaning processes and query performance improvements",
+  "main": "scripts/etl-cleaner.js",
+  "scripts": {
+    "start": "node scripts/etl-cleaner.js",
+    "etl": "node scripts/etl-cleaner.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "db:setup": "psql -U postgres -d workshop_db -f database/database-schema.sql",
+    "db:clean": "psql -U postgres -d workshop_db -f scripts/etl-data-cleaning.sql"
+  },
+  "keywords": [
+    "database",
+    "optimization",
+    "etl",
+    "postgresql",
+    "data-cleaning",
+    "performance"
+  ],
+  "author": "Binar AI Assignment",
+  "license": "MIT",
+  "dependencies": {
+    "pg": "^8.11.0"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/database-optimization-project.git"
+  }
+}

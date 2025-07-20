@@ -1,0 +1,24 @@
+Step,Operation,Details
+1,Nested Loop Left Join,
+2,Nested Loop Left Join,
+3,Nested Loop Left Join,
+4,Nested Loop Left Join,
+5,Nested Loop Left Join,
+6,Nested Loop Left Join,
+7,Index Scan,"using users_pkey on users as u
+Index Cond: (id = 1001)"
+8,Index Scan,"using auth_pkey on auth as a
+Index Cond: (id = u.auth_id)"
+9,Index Scan,"using idx_user_roles_user_id_optimized on user_roles as ur
+Index Cond: (user_id = 1001)"
+10,Index Scan,"using idx_user_divisions_user_id_optimized on user_divisions as ud
+Index Cond: (user_id = 1001)"
+11,Aggregate,
+12,Index Only Scan,"using idx_user_logs_user_id_optimized on user_logs as user_logs
+Index Cond: (user_id = 1001)"
+13,Aggregate,
+14,Index Only Scan,"using idx_user_roles_user_id_optimized on user_roles as user_roles
+Index Cond: (user_id = 1001)"
+15,Aggregate,
+16,Index Only Scan,"using idx_user_divisions_user_id_optimized on user_divisions as user_divisions
+Index Cond: (user_id = 1001)"
